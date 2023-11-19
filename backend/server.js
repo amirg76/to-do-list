@@ -1,10 +1,13 @@
 import express from "express"; 
 import dotenv from "dotenv";
-
+// import  "./db/mongoose.js";
+import {connectDB} from "./db/mongoose.js"
 import { goalRoutes } from "./routes/goalRoutes.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
+
+connectDB()
 const app = express();
 
 // handle url encoded
